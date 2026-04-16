@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+/* --- THIẾT LẬP CHUNG --- */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Rubik", sans-serif; background-position: top; background-repeat: repeat-x; }
+#container { width: 1000px; margin: 0 auto; }
+
+/* --- HEADER --- */
+#header { height: 300px; border-radius: 5px; }
+.banner-img { border-radius: 10px; width: 1000px; height: 300px; }
+
+/* --- MENU --- */
+#menu { height: 50px; }
+#menu_left_corner, #menu_right_corner { float: left; height: 50px; background-color: #504b4b; }
+#menu_left_corner { width: 9px; border-radius: 50px 0px 0px 50px; }
+#menu_right_corner { width: 8px; border-radius: 0px 50px 50px 0px; }
+#menu_content { width: 983px; height: 50px; background-color: #504b4b; float: left; }
+#hmenu { list-style-type: none; margin-left: -20px; margin-top: 0px; }
+#hmenu li { float: left; margin-left: 20px; margin-right: 20px; line-height: 50px; }
+.menu-link { color: #e8ffff; text-decoration: none; line-height: 50px; display: block; }
+.menu-link:hover { color: #f4e0ce; }
+.devider { background-image: url(../images/layout/menu_divider.gif); width: 2px; }
+
+/* --- CẤU TRÚC TRANG --- */
+#left { width: 196px; float: left; }
+#right { width: 196px; float: right; }
+#content { width: 588px; float: left; margin-left: 10px; }
+
+/* --- BÀI 3: TÌM KIẾM --- */
+.search-container { display: flex; margin-top: 10px; margin-bottom: 5px; height: 32px; }
+.search-container input[type="text"] { width: 140px; padding: 5px; border: 1px solid #ccc; outline: none; }
+.search-container button { background-color: #504b4b; color: white; border: none; padding: 5px 8px; cursor: pointer; }
+
+/* --- BÀI 3: GIỎ HÀNG --- */
+#cart { width: 195px; height: 84px; background-image: url(../images/layout/cart_bg.gif); margin-top: 10px; }
+#cart-title { text-align: center; color: #847676; font-weight: bold; padding-top: 5px; font-size: 15px; }
+#cart-content { padding: 5px 10px; overflow: hidden; }
+#cart-detail { font-size: 13px; color: #847676; float: left; width: 115px; padding-top: 5px; }
+.cart-line { border-bottom: 1px dashed #847676; margin-bottom: 3px; padding-bottom: 3px; display: block; width: 90%; }
+.total-price { color: #F00; font-weight: bold; }
+#cart-img { width: 48px; height: 48px; background-image: url(../images/layout/shoppingcart.png); background-repeat: no-repeat; float: right; }
+
+/* --- SIDEBAR MENU --- */
+.title { line-height: 30px; text-align: center; color: #FFF; font-weight: bold; background-color: #504b4b; border-radius: 10px 10px 0 0; margin-top: 10px; }
+.categories { list-style-type: none; margin-top: 0px; margin-left: -40px; }
+.categories li a { text-decoration: none; color: #504b4b; line-height: 30px; display: block; }
+.categories li a:hover { font-weight: bold; }
+.lmenu1 { background-color: #dad0d0; padding-left: 5px; margin-bottom: 1px; }
+.lmenu2 { background-color: #eee6e6; padding-left: 5px; margin-bottom: 1px; }
+.box_content { text-align: center; border: 3px solid #504b4b; padding: 2px; }
+
+/* --- NỘI DUNG CHÍNH --- */
+.center_title { line-height: 33px; color: #847676; font-weight: bold; padding-left: 50px; background: #eee url(../images/layout/bar_bg.gif) no-repeat left center; border-radius: 5px; margin-top: 10px; }
+.center_content { padding: 7px; overflow: hidden; }
+.product_box { width: 190px; float: left; padding: 9px; margin-bottom: 10px; }
+.pro_box_top { height: 12px; background-image: url(../images/layout/product_box_top.gif); }
+.pro_box_mid { background-image: url(../images/layout/product_box_center.gif); padding: 5px; }
+.pro_box_bot { height: 10px; background-image: url(../images/layout/product_box_bottom.gif); }
+.pro_title { text-align: center; font-weight: bold; color: #F00; font-size: 13px; height: 35px; overflow: hidden; }
+.pro_img { text-align: center; padding: 5px 0px; }
+.pro_img img { height: 100px; max-width: 140px; }
+
+/* SỬA LỖI GIÁ & ĐẶT MUA */
+.price2 { color: #F00; font-size: 13px; float: left; width: 45%; text-align: left; }
+.oldprice { text-align: center; color: #847676; text-decoration: line-through; font-size: 13px; }
+.pro_cart { width: 55%; float: right; font-size: 12px; text-align: right; }
+.pro_cart a { text-decoration: none; color: #0fa0dd; }
+.price-container {
+    display: flex;           /* Kích hoạt flexbox */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+    gap: 10px;               /* Khoảng cách giữa giá mới và giá cũ */
+    margin-top: 5px;         /* Cách pro_img một chút */
+    }
+/* --- FOOTER --- */
+#footer { height: 60px; color: #847676; font-size: 12px; text-align: center; line-height: 20px; font-style: italic; background-image: url(../images/layout/footer_bg.gif); clear: both; margin-top: 15px; }

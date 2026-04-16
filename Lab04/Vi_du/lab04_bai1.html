@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BookStore-Lab04_Bai1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Dancing+Script:wght@600&family=Kanit&family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="path/to/fork-awesome/css/fork-awesome.min.css">
+    <style>
+        @charset "utf-8";
+        body {
+            background-position: top;
+            background-repeat: repeat-x;
+            margin: 0;
+            font-family: "Rubik", sans-serif;
+        }
+
+        #container {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER & BANNER --- */
+        #header {
+            height: 300px;
+            border-radius: 5px;
+        }
+
+        #banner_logo {
+            float: right;
+        }
+
+        .banner-img {
+            border-radius: 10px;
+            width: 1000px;
+            height: 300px;
+        }
+
+        /* --- MENU CHÍNH --- */
+        #menu {
+            height: 50px;
+        }
+
+        #menu_left_corner, #menu_right_corner {
+            float: left;
+            height: 50px;
+            background-color: #504b4b;
+        }
+
+        #menu_left_corner {
+            width: 9px;
+            border-radius: 50px 0px 0px 50px;
+        }
+
+        #menu_right_corner {
+            width: 8px;
+            border-radius: 0px 50px 50px 0px;
+        }
+
+        #menu_content {
+            width: 983px;
+            height: 50px;
+            background-color: #504b4b;
+            float: left;
+        }
+
+        #hmenu {
+            list-style-type: none;
+            margin-left: -20px;
+            margin-top: 0px;
+        }
+
+        #hmenu li {
+            float: left;
+            margin-left: 20px;
+            margin-right: 20px;
+            line-height: 50px;
+        }
+        .menu-link {
+            color: #e8ffff;
+            text-decoration: none;
+            line-height: 50px;
+            display: block;
+        }
+
+        .menu-link:hover {
+            color: #f4e0ce;
+        }
+
+        .devider {
+            background-image: url(./images/layout/menu_divider.gif);
+            width: 2px;
+        }
+
+        /* --- CẤU TRÚC TRANG --- */
+        #left, #right { width: 196px; float: left; }
+        #right { float: right; }
+        #content {
+            width: 588px;
+            float: left;
+            margin-left: 10px;
+        }
+
+        /* --- DANH MỤC & BOX --- */
+        .title {
+            line-height: 30px;
+            text-align: center;
+            color: #FFF;
+            font-weight: bold;
+            background-color: #504b4b;
+            border-radius: 10px 10px 0 0;
+            margin-top: 10px;
+        }
+
+        .categories {
+            list-style-type: none;
+            margin-top: 0px;
+            margin-left: -40px;
+        }
+
+        .categories li a {
+            text-decoration: none;
+            color: #504b4b;
+            line-height: 30px;
+            display: block;
+        }
+
+        /* CSS cho các dòng menu trái/phải */
+        .lmenu1 { background-color: #dad0d0; padding-left: 5px; margin-bottom: 1px; }
+        .lmenu2 { background-color: #eee6e6; padding-left: 5px; margin-bottom: 1px; }
+
+        .box_content {
+            text-align: center;
+            border: 3px solid #504b4b;
+            padding: 2px;
+        }
+
+        .promo-box-height { height: 190px; }
+
+        /* --- SẢN PHẨM --- */
+        .center_title {
+            line-height: 33px;
+            color: #847676;
+            font-weight: bold;
+            padding-left: 50px;
+            background: url(./images/layout/bar_bg.gif) no-repeat center;
+        }
+
+        .product_box { width: 173px; float: left; padding: 9px; }
+        .pro_box_top { height: 12px; background-image: url(./images/layout/product_box_top.gif); }
+        .pro_box_mid { background-image: url(./images/layout/product_box_center.gif); }
+        .pro_box_bot { height: 10px; background-image: url(./images/layout/product_box_bottom.gif); }
+
+        .pro_title { text-align: center; font-weight: bold; color: #F00; font-size: 14px; }
+        .pro_img { text-align: center; padding: 5px 0px; }
+        .pro_img img { height: 100px; }
+
+        /* Chuyển style giá tiền từ Inline sang Class */
+        .price {
+            color: #F00; font-size: 13px; float: left; width: 45%; text-align: left;
+        }
+
+        .price-container {
+        display: flex;           /* Kích hoạt flexbox */
+        justify-content: center; /* Căn giữa theo chiều ngang */
+        align-items: center;     /* Căn giữa theo chiều dọc */
+        gap: 10px;               /* Khoảng cách giữa giá mới và giá cũ */
+        margin-top: 5px;         /* Cách pro_img một chút */
+        }
+
+        .price2 {
+            color: red;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .oldprice {
+            color: #847676;
+            text-decoration: line-through;
+            font-size: 13px;
+        }
+        .pro_cart { width: 50%; float: right; font-size: 14px; text-align: center; }
+        .pro_cart a { text-decoration: none; color: #0fa0dd; }
+
+        /* --- FOOTER --- */
+        #footer {
+            height: 60px;
+            color: #847676;
+            font-size: 12px;
+            text-align: center;
+            line-height: 20px;
+            font-style: italic;
+            background-image: url(./images/layout/footer_bg.gif);
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="banner_logo">
+                <a href="#"><img src="images/bookstoreBanner.jpg" alt="Banner" class="banner-img" /></a>
+            </div>
+        </div>
+
+        <div id="menu">
+            <div id="menu_left_corner"></div>
+            <div id="menu_content">
+                <ul id="hmenu">
+                    <li><a class="menu-link" href="#"><img src="images/layout/home.png" /> TRANG CHỦ</a></li>
+                    <li class="devider">&nbsp;</li>
+                    <li><a class="menu-link" href="#"><img src="images/layout/services.png" /> DỊCH VỤ</a></li>
+                    <li class="devider">&nbsp;</li>
+                    <li><a class="menu-link" href="#"><img src="images/layout/favs.png" /> TIN KHUYẾN MÃI</a></li>
+                    <li class="devider">&nbsp;</li>
+                    <li><a class="menu-link" href="#"><img src="images/layout/car.png" /> GIAO HÀNG</a></li>
+                    <li class="devider">&nbsp;</li>
+                    <li><a class="menu-link" href="#"><img src="images/layout/user_add.png" /> ĐĂNG NHẬP</a></li>
+                </ul>
+            </div>
+            <div id="menu_right_corner"></div>
+            <div style="clear:both"></div>
+        </div>
+
+        <div id="main">
+            <div id="left">
+                <div class="title">Loại sản phẩm</div>
+                <ul class="categories">
+                    <li class="lmenu1"><a href="#"><img src="images/layout/checked.png" /> &nbsp;&nbsp;Văn Học</a></li>
+                    <li class="lmenu2"><a href="#"><img src="images/layout/checked.png" /> &nbsp;&nbsp;Kinh Tế</a></li>
+                    <li class="lmenu1"><a href="#"><img src="images/layout/checked.png" /> &nbsp;&nbsp;Tâm Lý</a></li>
+                    <li class="lmenu2"><a href="#"><img src="images/layout/checked.png" /> &nbsp;&nbsp;Thiếu Nhi</a></li>
+                    <li class="lmenu1"><a href="#"><img src="images/layout/checked.png" /> &nbsp;&nbsp;Giáo Khoa</a></li>
+                    <li class="lmenu2"><a href="#"><img src="images/layout/checked.png" /> &nbsp;&nbsp;Ngoại Ngữ</a></li>
+                </ul>
+                <div class="box">
+                    <div class="title">SP Khuyến mãi</div>
+                    <div class="box_content" style="height:190px;">
+                        <marquee direction="up" height="190">
+                            <div class="pro_title">Goth - Những Kẻ Hắc Ám (Tái Bản 2019)</div>
+                            <div class="pro_img"><img src="images/Sach_3.jpg" height="120" /></div>
+                            <div class="price-container">
+                                <div class="price2">63.000</div>
+                                <div class="oldprice">108.000</div>
+                            </div>
+                            <div style="clear:both"></div>
+                        </marquee>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content">
+                <div class="center_title">Sản phẩm mới</div>
+                <div class="center_content">
+                    <div class="product_box">
+                        <div class="pro_box_top"></div>
+                        <div class="pro_box_mid">
+                            <div class="pro_title">Cây Cam Ngọt Của Tôi</div>
+                            <div class="pro_img"><img src="images/Sach_10.jpg" /></div>
+                            <div class="price">75.100</div>
+                            <div class="pro_cart"><a href="#"><img src="images/layout/cart.gif" /> Đặt mua</a></div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="pro_box_bot"></div>
+                    </div>
+                    <div class="product_box">
+                        <div class="pro_box_top"></div>
+                        <div class="pro_box_mid">
+                            <div class="pro_title">Kế toán vỉa hè</div>
+                            <div class="pro_img"><img src="images/book_9.png" /></div>
+                            <div class="price">110.300</div>
+                            <div class="pro_cart"><a href="#"><img src="images/layout/cart.gif" /> Đặt mua</a></div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="pro_box_bot"></div>
+                    </div>
+                    <div class="product_box">
+                        <div class="pro_box_top"></div>
+                        <div class="pro_box_mid">
+                            <div class="pro_title">Siêu nhân xe bồn bánh</div>
+                            <div class="pro_img"><img src="images/Sach.jpg" /></div>
+                            <div class="price">90.500</div>
+                            <div class="pro_cart"><a href="#"><img src="images/layout/cart.gif" /> Đặt mua</a></div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="pro_box_bot"></div>
+                    </div>
+                </div>
+                
+                <div style="clear:both"></div>
+                <div class="center_title">Sản phẩm bán chạy</div>
+                <div class="center_content">
+                    <div class="product_box">
+                        <div class="pro_box_top"></div>
+                        <div class="pro_box_mid">
+                            <div class="pro_title">Bán hàng ONL</div>
+                            <div class="pro_img"><img src="images/Sach_4.png" /></div>
+                            <div class="price">184.000</div>
+                            <div class="pro_cart"><a href="#"><img src="images/layout/cart.gif" /> Đặt mua</a></div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="pro_box_bot"></div>
+                    </div>
+                    <div class="product_box">
+                        <div class="pro_box_top"></div>
+                        <div class="pro_box_mid">
+                            <div class="pro_title">GOTH</div>
+                            <div class="pro_img"><img src="images/Sach_3.jpg" /></div>
+                            <div class="price">310.000</div>
+                            <div class="pro_cart"><a href="#"><img src="images/layout/cart.gif" /> Đặt mua</a></div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="pro_box_bot"></div>
+                    </div>
+                    <div class="product_box">
+                        <div class="pro_box_top"></div>
+                        <div class="pro_box_mid">
+                            <div class="pro_title">Thế giới diệu kì</div>
+                            <div class="pro_img"><img src="images/Sach_2.jpg" /></div>
+                            <div class="price">199.000</div>
+                            <div class="pro_cart"><a href="#"><img src="images/layout/cart.gif" /> Đặt mua</a></div>
+                            <div style="clear:both"></div>
+                        </div>
+                        <div class="pro_box_bot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="right">
+                <div class="title">Hãng sản xuất</div>
+                <ul class="categories">
+                    <li class="lmenu1"><a href="#"><img src="images/layout/checked.png" /> CHONMUA 365</a></li>
+                    <li class="lmenu2"><a href="#"><img src="images/layout/checked.png" /> Deli</a></li>
+                    <li class="lmenu1"><a href="#"><img src="images/layout/checked.png" /> Thiên Long</a></li>
+                    <li class="lmenu2"><a href="#"><img src="images/layout/checked.png" /> KLONG</a></li>
+                    <li class="lmenu1"><a href="#"><img src="images/layout/checked.png" /> Lazy Box</a></li>
+                    <li class="lmenu2"><a href="#"><img src="images/layout/checked.png" /> M&G</a></li>
+                </ul>
+                <div class="box">
+                    <div class="title">Quảng cáo</div>
+                    <div class="box_content"><img src="images/Sach_7.jpg" width="190" /></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            Copyright&copy; Cửa hàng sách tốt ABC<br /> 
+            Địa chỉ: 180 Cao Lỗ Phường 4 Quận 8 Tp.HCM<br /> 
+            Điện thoại: 0901234567
+        </div>
+    </div>
+</body>
+
+</html>
